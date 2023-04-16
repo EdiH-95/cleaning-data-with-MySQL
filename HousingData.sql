@@ -17,7 +17,7 @@ AND a.UniqueID <> b.UniqueID
 SET a.PropertyAddress = IFNULL(a.PropertyAddress, b.PropertyAddress)
 WHERE a.PropertyAddress IS NULL;
 
--- Breaking adress into individuals columns adress and city
+-- Breaking address into individuals columns adress and city
 SELECT SUBSTRING_INDEX(PropertyAddress, ',', 1) AS Address,
 SUBSTRING_INDEX(PropertyAddress, ',', -1) AS City
 FROM housingdata;
